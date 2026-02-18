@@ -1,0 +1,24 @@
+{
+    "name": "rebornmedia1/rebornmedia-starter-kit",
+    "extra": {
+        "statamic": {
+            "name": "Reborn Media Starter Kit",
+            "description": "Reborn Media starter kit"
+        },
+        "laravel": {
+            "providers": [
+                "Rebornmedia\\RebornMediaStarterKit\\ServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Rebornmedia\\RebornMediaStarterKit\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    }
+}
