@@ -1,0 +1,8 @@
+social_media_links:
+  -
+    id: RPwztJmVqsRqdhvV8moGK
+    title: Facebook
+    icon: '<i class="fa-brands fa-facebook"></i>'
+    link: 'https://www.facebook.com'
+    type: new_set
+    enabled: true

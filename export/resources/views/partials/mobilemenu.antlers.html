@@ -1,0 +1,28 @@
+<div x-show="mobilemenu" class="fixed h-full w-full bg-gray-100 z-30 top-0">
+
+    <i class="fa-solid fa-xmark absolute top-0 right-0 mt-8 mr-8 cursor-pointer text-4xl" @click="mobilemenu = false"></i>
+<ul class="mt-48 ">
+    {{ nav:main_navigation }}
+
+    <li @click="dropdownMenu = true" class="  relative block text-center cursor-pointer mb-8 "
+        x-data="{dropdownMenu: false}" @click.away="dropdownMenu = false" x-cloak>
+        <a class="text-xl hover:text-secondary-colour font-bold hover:underline" {{ if !children}} href="{{ url }}" {{/if }}>{{ title }}
+            {{ if children }}
+        </a>
+        <I class="fa-regular fa-chevron-up ml-2" :class="dropdownMenu || 'fa-chevron-down'"></i>
+        <div x-show="dropdownMenu" class="   ">
+            <div class="  w-full   pb-2 ">
+                {{ children }}
+                <a href="{{ url }}" class="block  py-1 text-base hover:text-secondary-colour text-brand-blue hover:underline mx-1 px-2 w-full   ">{{ title }} </a>
+                {{ /children }}
+            </div>
+        </div>
+        {{ /if}}
+        </li>
+              {{ /nav:main_navigation }}
+ <li class="relative block text-center cursor-pointer mb-8">
+           <a href="/donate" class="text-xl bg-primary-colour px-4 py-2 text-white hover:bg-brand-blue rounded-full">DONATE</a>
+       </li>
+
+</ul>
+</div>

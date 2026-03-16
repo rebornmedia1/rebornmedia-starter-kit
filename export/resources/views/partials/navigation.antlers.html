@@ -1,0 +1,89 @@
+<header>
+<nav class="" x-data="{  mobilemenu: false }">
+    <div class=" ">
+        <div class="justify-end pt-2 relative top-4 hidden xl:flex">
+            <i class="fa-light fa-magnifying-glass relative top-4 text-3xl mr-12 lg:mr-8 text-brand-blue hover:text-dark-blue"
+                @click="search=true"></i>
+
+                <button href="{{ split_block_primary_button_link }}" class="btn btn-lg btn-primary text-white mr-8">Donate</button>
+
+        </div>
+    </div>
+    {{ partial:partials/mobilemenu }}
+
+    <!-- Full-width flex container -->
+    <div class="flex items-center mt-4 lg:mt-0 w-full lg:px-4">
+
+        <div class=" lg:mt-0">
+            <a href="/" class="relative left-0 ">
+                <img src="/assets/images/fill-logo.svg" class="w-full lg:h-32 lg:w-auto relative lg:mr-24 lg:z-30"
+                    alt="{{ site.name }} Logo" />
+            </a>
+        </div>
+
+        <!-- Right side: hamburger or full nav -->
+        <div class="lg:flex lg:items-center lg:w-full">
+
+            <!-- Mobile hamburger icon -->
+            <div class="xl:hidden text-right right-8 top-8 lg:right-4 absolute">
+                <i class="fa-solid fa-bars text-4xl" x-on:click="mobilemenu = true"></i>
+            </div>
+
+            <!-- Full nav on xl+ screens -->
+            <div class="hidden xl:flex items-center gap-2 font-bold ml-auto justify-end">
+                <ul>
+
+
+                {{ nav:main_navigation }}
+                <li x-data="{ dropdownMenu: false }" @click.away="dropdownMenu = false"
+                    class="relative inline-block menu-item-{{ id }}">
+
+                    <a @click="dropdownMenu = !dropdownMenu"
+                        class="flex items-center text-base 2xl:text-xl cursor-pointer text-brand-blue font-bold hover:text-dark-blue   py-2 px-4 uppercase hover:text-cta-colour transition duration-300"
+                        :class="dropdownMenu" {{ if !children }} href="{{ url }}" {{ /if }}>
+                        {{ title }}
+                        {{ if children }}
+                        <i class="fa-regular fa-chevron-up ml-2" :class="dropdownMenu || 'fa-chevron-down'"></i>
+                        {{ /if }}
+                    </a>
+
+                    {{ if children }}
+                    <div x-cloak x-show="dropdownMenu"
+                        class="absolute left-0 z-50 rounded-md shadow-lg bg-white flex w-[650px] {{ if count > 3 }} right-0 left-auto {{ /if }}">
+                        <div class="bg-white text-left w-3/5 p-8">
+                            {{ children }}
+                            <a href="{{ url }}"
+                                class="block font-bold text-primary-colour text-lg py-3 hover:underline hover:text-cta-colour main-nav-dropdown">
+                                <i class="fa-regular fa-chevron-right mr-2"></i>{{ title }}
+                            </a>
+                            {{ /children }}
+                        </div>
+
+                        {{ if menu_image }}
+                        <div class="w-3/5 bg-creation-mid-background p-8 text-left">
+                            <a href="{{ menu_cta_button_link }}">
+                                {{ glide src="{{ menu_image }}" width="330" height="200" fit="crop_focal" }}
+                                <img class="rounded-lg" src="{{ url }}" width="{{ width }}" height="{{ height }}"
+                                    alt="{{alt}}">
+                                {{ /glide }}
+                            </a>
+                            <p class="mt-4 text-sm font-normal w-full mb-2">{{ menu_cta_text }}</p>
+                            {{ if menu_cta_button_link }}
+                            <a href="{{ menu_cta_button_link }}"
+                                class="button bg-primary-colour nav-button hover:bg-brand-blue text-white hover:bg-secondary-colour inline-block border border-white">
+                                {{ menu_cta_button_text }}
+                            </a>
+                            {{ /if }}
+                        </div>
+                        {{ /if }}
+                    </div>
+                    {{ /if }}
+                </li>
+                {{ /nav:main_navigation }}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</nav>
+</header>

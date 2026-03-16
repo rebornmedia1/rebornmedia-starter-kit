@@ -1,0 +1,31 @@
+title: 'Site Settings'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Images
+        fields:
+          -
+            handle: rounded_images
+            field:
+              type: toggle
+              display: 'Rounded Images'
+      -
+        display: Colours
+        fields:
+          -
+            handle: primary_colour
+            field:
+              type: text
+              display: 'Primary Colour'
+          -
+            handle: secondary_colour
+            field:
+              type: text
+              display: 'Secondary Colour'
+          -
+            handle: third_colour
+            field:
+              type: text
+              display: 'Third Colour'

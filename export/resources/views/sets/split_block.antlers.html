@@ -1,0 +1,43 @@
+{{ if type == "split_block" }}
+
+    <div class="py-12">
+        <div class="container mx-auto px-8">
+            <div class="flex flex-wrap">
+                <div class="w-full xl:w-1/2 flex flex-col justify-center  {{ if split_block_reverse }} order-2 {{ else  }} order-1 {{ /if }}">
+                    <h2 class="font-bold text-2xl xl:text-4xl mb-4">{{ split_block_title }}</h2>
+                    <div class="prose xl:prose-xl">
+                        {{ split_block_content }}
+                    </div>
+
+                    <div class="mt-4 text-xl">
+                    {{ if split_block_primary_button_link }}
+                        <button href="{{ split_block_primary_button_link }}" class="btn btn-lg btn-primary">{{ split_block_primary_button_text }}</button>
+
+                    {{ /if }}
+                      {{ if split_block_secondary_button_link }}
+
+                        <button href="{{ split_block_secondary_button_link }}" class="btn ml-4 btn-lg btn-secondary">{{ split_block_secondary_button_text }}</button>
+                    {{ /if }}
+
+                    </div>
+
+                </div>
+
+                <div class="w-full xl:w-1/2  {{ if split_block_reverse }} order-1 pr-24 {{ else  }} pl-24 order-2 {{ /if }}">
+                    {{ split_block_image}}
+                    <picture class="relative z-10 w-full cursor-pointer {{ if site_settings:rounded_images }} rounded-md {{ /if }}">
+                        <source
+                            srcset="{{ glide :src='url' preset='lg-webp' height='500' width='800' fit='crop_focal' }}"
+                            type="image/webp">
+                        <img src="{{ glide :src='url' height='500' width='800' fit='crop_focal' }}" alt="{{ alt }}"
+                             class="w-full {{ if site_settings:rounded_images }} rounded-md {{ /if }}">
+                    </picture>
+                    {{ /split_block_image }}
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{ /if }}

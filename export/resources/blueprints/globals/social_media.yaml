@@ -1,0 +1,35 @@
+title: 'Social Media'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: social_media_links
+            field:
+              type: replicator
+              display: 'Social Media Links'
+              sets:
+                social_media_link:
+                  display: 'Social Media Link'
+                  icon: social-twitter-logo
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: title
+                          field:
+                            type: text
+                            display: Title
+                        -
+                          handle: icon
+                          field:
+                            type: text
+                            display: Icon
+                        -
+                          handle: link
+                          field:
+                            type: link
+                            display: Link

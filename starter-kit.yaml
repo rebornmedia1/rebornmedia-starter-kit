@@ -10,4 +10,7 @@ export_paths:
   - package.json
   - vite.config.js
 dependencies:
+  alt-design/alt-cookies: ^1.2
+  alt-design/alt-redirect: ^1.7
   alt-design/alt-seo: ^1.4
+  alt-design/alt-sitemap: ^1.4

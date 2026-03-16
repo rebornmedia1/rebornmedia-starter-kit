@@ -4,12 +4,25 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ title ?? site:name }}</title>
+        {{ alt_seo:meta }}
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
-    </head>
-    <body class="bg-zinc-100 dark:bg-zinc-900 font-sans leading-normal text-zinc-800 dark:text-zinc-400">
-        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
-            {{ template_content }}
-        </div>
+        {{ livewire:styles }}
+        <script src="https://kit.fontawesome.com/e0d0f0233f.js" crossorigin="anonymous"></script>
+        <style>
+         :root {
+         --color-primary: {{ site_settings:primary_colour }};
+        --color-secondary: {{ site_settings:secondary_colour }};
+        --color-accent: {{ site_settings:third_colour }}
+         }
+        </style>
+    </Head>
+    <body class=" font-sans leading-normal">
+        {{ partial:partials.navigation }}
+{{ template_content  }}
+
+        {{ partial:partials.footer }}
+
+        {{ AltCookies:Toast }}
+        {{ livewire:scripts }}
     </body>
 </html>

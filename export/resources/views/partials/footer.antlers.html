@@ -1,0 +1,29 @@
+<footer class="py-8 text-sm">
+    <div class="container mx-auto px-8">
+        <div class="flex flex-wrap">
+            <div class="w-full xl:w-1/2">
+                <p class=" mb-4">&copy; {{ now | format="Y" }} {{ site:name }}. All rights reserved.</p>
+                    {{ if site_information:address }}<address class="">{{ site_information:address }}</address>{{/if}}
+                        {{ if site_information:phone_number }}<p class=""><a href="tel:{{site_information:phone_number}}">{{ site_information:phone_number }}</a></p>{{ /if }}
+                        {{ if site_information:email_address }}<p class=""><a href="mailto:{{site_information:email_address}}">{{ site_information:email_address }}</a></p>{{ /if }}
+            </div>
+            <div class="w-full xl:w-1/2">
+                <nav aria-label="Social Media Links">
+                    <ul class="list-none text-xl flex justify-end ">
+                        {{ social_media:social_media_links }}
+                        <li class="list-none text-xl"><a href="{{link}}" target="_blank" rel="noopener noreferrer" class="text-xl" aria-label="{{ title }}" ><span aria-hidden="true">{{icon}}</span></a></li>
+                        {{ /social_media:social_media_links }}
+                    </ul>
+                </nav>
+                <nav class="mt-8" aria-label="Footer Navigation">
+                    <ul class="xl:flex xl:justify-end">
+                        {{ nav:footer_navigation }}
+                        <li class="xl:ml-4"><a href="{{url}}">{{ title }}</a></li>
+                        {{ /nav:footer_navigation }}
+
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+</footer>
