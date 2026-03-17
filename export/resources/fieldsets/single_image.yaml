@@ -1,0 +1,14 @@
+title: 'Single Image'
+fields:
+  -
+    handle: image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: Image
+  -
+    handle: caption
+    field:
+      type: text
+      display: Caption

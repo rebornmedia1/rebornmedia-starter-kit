@@ -1,0 +1,36 @@
+title: FAQs
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: content
+    field:
+      container: assets
+      remove_empty_nodes: false
+      type: bard
+      display: Content
+  -
+    handle: faqs
+    field:
+      type: replicator
+      display: FAQs
+      sets:
+        faqs:
+          display: FAQs
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: question
+                  field:
+                    type: text
+                    display: Question
+                -
+                  handle: answer
+                  field:
+                    type: textarea
+                    display: Answer

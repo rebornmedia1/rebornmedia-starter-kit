@@ -1,0 +1,51 @@
+title: 'Split Block'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: content
+    field:
+      container: assets
+      remove_empty_nodes: false
+      type: bard
+      display: Content
+  -
+    handle: primary_button_text
+    field:
+      type: text
+      display: 'Primary Button Text'
+      width: 50
+  -
+    handle: primary_button_link
+    field:
+      type: link
+      display: 'Primary Button Link'
+      width: 50
+  -
+    handle: secondary_button_text
+    field:
+      type: text
+      display: 'Secondary Button Text'
+      width: 50
+  -
+    handle: secondary_button_link
+    field:
+      type: link
+      display: 'Secondary Button Link'
+      width: 50
+  -
+    handle: image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: Image
+  -
+    handle: reverse
+    field:
+      type: toggle
+      display: Reverse
+      instructions: 'Reverse the layout of the block'

@@ -1,4 +1,4 @@
-updatable: true
+updatable: false
 export_paths:
   - content
   - config/filesystems.php
@@ -9,6 +9,8 @@ export_paths:
   - public/build
   - package.json
   - vite.config.js
+  - resources/fieldsets
+  - content/globals
 dependencies:
   alt-design/alt-cookies: ^1.2
   alt-design/alt-redirect: ^1.7
